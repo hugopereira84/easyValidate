@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>VALIDATE FORMS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery-migrate-1.2.1.min.js"></script> 
+        
+        <!-- JS TO VALIDATE FORM -->
+        <script type="text/javascript" src="js/validate.js"></script>
+        <script>
+            $( window ).load(function() {
+                $("#formToValidate").validateForm();
+            });
+        </script>
+      
+        
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <form action="http://www.google.pt" method="post" id="formToValidate">
+             <label class="campos">Nome e Apelido:</label>
+            <input id="input_nome" class="input_um validate[required]" type="text" name="fielname" autocomplete="off"/>
+            
+            <br>
+            
+            <label class="campos_um">Email:</label>
+            <input id="input_email" class="input_dois validate[required,email]" type="text" name="fieldEmail" autocomplete="off"/>
+            
+            <br>
+
+            <label class="campos_dois">Telefone:</label>
+            <input id="input_telefone" class="input_tres validate[required, phone]" type="text" maxlength="9"  name="fieldContacto" autocomplete="off"/>
+            
+            <br>
+
+            <label class="campos_um">Código-Postal:</label>
+            <input id="input_cp1" class="input_quatro validate[pc_part1]" type="text" name="fieldCodPostal1" maxlength="4" autocomplete="off"/>
+            <span class="tracinho">--</span>
+            <input id="input_cp2" class="input_cinco validate[pc_part2]" type="text" name="fieldCodPostal1" maxlength="3" autocomplete="off"/>
+            
+            <br>
+            
+			<label class="campos_dois">Nº Contribuinte:</label>
+            <input id="input_contribuinte" class="input_seis validate[nif]" type="text" size="9" maxlength="9" name="nif" autocomplete="off"/>
+			
+			<br>
+			
+			<label class="campos_dois">Numeros:</label>
+			<br>
+            <input class="inputNumber validate[number3]" type="text" maxlength="3" autocomplete="off"/><br>
+			<input class="inputNumber validate[number9]" type="text" maxlength="9" autocomplete="off"/>
+            
+            
+            
+            <input type="submit" name="btSubmit" value="Submeter" />
+        </form>
+    </body>
+</html>
